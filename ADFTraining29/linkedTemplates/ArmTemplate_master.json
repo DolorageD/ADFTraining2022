@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_BLOB_Training29blob'"
 		},
+		"LS_SQL_Trainingsql29_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SQL_Trainingsql29'"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -47,6 +51,9 @@
 					},
 					"LS_BLOB_Training29blob_connectionString": {
 						"value": "[parameters('LS_BLOB_Training29blob_connectionString')]"
+					},
+					"LS_SQL_Trainingsql29_connectionString": {
+						"value": "[parameters('LS_SQL_Trainingsql29_connectionString')]"
 					}
 				}
 			},

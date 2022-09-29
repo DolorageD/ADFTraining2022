@@ -11,6 +11,9 @@
 		"LS_BLOB_Training29blob_connectionString": {
 			"value": ""
 		},
+		"LS_SQL_Trainingsql29_connectionString": {
+			"value": ""
+		},
 		"containerUri": {
 			"value": ""
 		},
