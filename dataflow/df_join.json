@@ -10,6 +10,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "Movies"
+				},
+				{
+					"dataset": {
+						"referenceName": "Moviesdb_DS",
+						"type": "DatasetReference"
+					},
+					"name": "MovieDB"
 				}
 			],
 			"sinks": [],
@@ -30,8 +37,19 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> Movies",
+				"source(output(",
+				"          movie as string,",
+				"          title as string,",
+				"          genres as string,",
+				"          year as string,",
+				"          Rating as string,",
+				"          RottenTomato as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> MovieDB",
 				"Movies derive(titleNew = toString(left(title,length(title)-6)))) ~> MoviesClean",
-				"MoviesClean join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"MoviesClean, MovieDB join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
 				"     joinType:'left',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
