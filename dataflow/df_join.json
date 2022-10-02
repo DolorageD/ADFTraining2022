@@ -32,6 +32,9 @@
 				}
 			],
 			"scriptLines": [
+				"parameters{",
+				"     parameter1 as string",
+				"}",
 				"source(output(",
 				"          movieId as string,",
 				"          title as string,",
@@ -51,7 +54,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> MovieDB",
-				"Movies derive(titleNew = toString(left(title,length(title)-6)))) ~> MoviesClean",
+				"Movies derive(titleNew = toString(left(title,length(title)-6))) ~> MoviesClean",
 				"MoviesClean, MovieDB join(titleNew == MovieDB@title,",
 				"     joinType:'left',",
 				"     matchType:'exact',",
