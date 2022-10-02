@@ -13,16 +13,11 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [
-				{
-					"name": "derivedColumn1"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> Movies",
-				"Movies derive() ~> derivedColumn1"
+				"     ignoreNoFilesFound: false) ~> Movies"
 			]
 		}
 	}
