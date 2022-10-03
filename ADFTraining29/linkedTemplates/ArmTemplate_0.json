@@ -186,6 +186,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
+						"fileName": "op.csv",
 						"container": "output"
 					},
 					"columnDelimiter": ",",
@@ -512,7 +513,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "dfjoinPL",
+						"name": "dfjoinPl",
 						"type": "ExecuteDataFlow",
 						"dependsOn": [],
 						"policy": {
@@ -550,6 +551,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
 				"[concat(variables('factoryId'), '/dataflows/df_join')]"
 			]
 		}
