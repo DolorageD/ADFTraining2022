@@ -19,7 +19,15 @@
 					"name": "MovieDB"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "MoviesOpCSV",
+						"type": "DatasetReference"
+					},
+					"name": "MoviesOp"
+				}
+			],
 			"transformations": [
 				{
 					"name": "MoviesClean"
@@ -70,7 +78,11 @@
 				"          RottenTomato",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1"
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> MoviesOp"
 			]
 		}
 	}
