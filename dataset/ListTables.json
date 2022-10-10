@@ -1,0 +1,12 @@
+{
+	"name": "ListTables",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_Trainingsql29",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
